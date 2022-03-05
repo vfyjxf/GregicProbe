@@ -18,6 +18,7 @@ import java.io.File;
         name = GregicProbe.NAME,
         version = GregicProbe.VERSION,
         dependencies = "required-after:gregtech;required-after:theoneprobe",
+        guiFactory = "vfyjxf.gregicprobe.config.GregicProbeGuiFactory",
         useMetadata = true
 )
 public class GregicProbe {
