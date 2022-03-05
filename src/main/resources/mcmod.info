@@ -1,0 +1,15 @@
+[
+{
+  "modid": "gregicprobe",
+  "name": "GregicProbe",
+  "description": "More The One Probe Support for GTCE",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["vfyjxf"],
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
