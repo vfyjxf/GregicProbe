@@ -10,6 +10,7 @@ import mcjty.theoneprobe.api.TextStyleClass;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
+import vfyjxf.gregicprobe.config.GregicProbeConfig;
 
 public class WorkableInforProvider extends CapabilityInfoProvider<IWorkable> {
 
@@ -32,9 +33,9 @@ public class WorkableInforProvider extends CapabilityInfoProvider<IWorkable> {
             horizontalPane.progress(currentProgress, maxProgress, probeInfo.defaultProgressStyle()
                     .numberFormat(NumberFormat.NONE)
                     .suffix(String.format("%.1fs / %.1fs", (double) currentProgress / 20.0D, (double) maxProgress / 20.0D))
-                    .borderColor(0)
+                    .borderColor(GregicProbeConfig.borderColorProgress)
                     .backgroundColor(0)
-                    .filledColor(0xFF000099)
+                    .filledColor(GregicProbeConfig.filledColorProgress)
                     .alternateFilledColor(0xFF000077));
 
         }
