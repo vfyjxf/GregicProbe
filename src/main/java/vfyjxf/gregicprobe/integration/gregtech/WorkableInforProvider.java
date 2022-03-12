@@ -34,9 +34,9 @@ public class WorkableInforProvider extends CapabilityInfoProvider<IWorkable> {
                     .numberFormat(NumberFormat.NONE)
                     .suffix(String.format("%.1fs / %.1fs", (double) currentProgress / 20.0D, (double) maxProgress / 20.0D))
                     .borderColor(GregicProbeConfig.borderColorProgress)
-                    .backgroundColor(0)
+                    .backgroundColor(GregicProbeConfig.backgroundColorProgress)
                     .filledColor(GregicProbeConfig.filledColorProgress)
-                    .alternateFilledColor(0xFF000077));
+                    .alternateFilledColor(GregicProbeConfig.alternateFilledColorProgress));
 
         }
     }

@@ -42,14 +42,14 @@ public class EnergyInfoProvider extends CapabilityInfoProvider<IEnergyContainer>
                     .borderColor(GregicProbeConfig.borderColorEnergy)
                     .backgroundColor(0x00000000)
                     .filledColor(GregicProbeConfig.filledColorEnergy)
-                    .alternateFilledColor(GregicProbeConfig.filledColorEnergy));
+                    .alternateFilledColor(GregicProbeConfig.alternateFilledColorEnergy));
         }else {
             horizontalPane.progress(energyStored, maxStorage, probeInfo.defaultProgressStyle()
                     .suffix("/" + maxStorage + " EU")
                     .borderColor(GregicProbeConfig.borderColorEnergy)
-                    .backgroundColor(0x00000000)
+                    .backgroundColor(GregicProbeConfig.backgroundColorEnergy)
                     .filledColor(GregicProbeConfig.filledColorEnergy)
-                    .alternateFilledColor(GregicProbeConfig.filledColorEnergy));
+                    .alternateFilledColor(GregicProbeConfig.alternateFilledColorEnergy));
         }
     }
 

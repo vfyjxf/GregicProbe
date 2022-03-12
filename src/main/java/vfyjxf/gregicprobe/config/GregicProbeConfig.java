@@ -25,9 +25,13 @@ public class GregicProbeConfig {
     public static boolean displayFluidName = true;
 
     public static int borderColorProgress = 0x00000000;
+    public static int backgroundColorProgress = 0;
     public static int filledColorProgress = 0xFF000099;
+    public static int alternateFilledColorProgress = 0xFF000099;
     public static int borderColorEnergy = 0x00000000;
+    public static int backgroundColorEnergy = 0;
     public static int filledColorEnergy = 0xFFFFE000;
+    public static int alternateFilledColorEnergy = 0xFFFFE000;
 
     public static void initConfig(File configFile) {
         config = new Configuration(configFile);
@@ -45,12 +49,15 @@ public class GregicProbeConfig {
         }
         //colour settings
         {
-            borderColorProgress = config.getInt("BorderColorProgress","colour",0x00000000,Integer.MIN_VALUE,Integer.MAX_VALUE,"The color that is used for the border of the progress bar");
-            filledColorProgress = config.getInt("FilledColorProgress", "colour",0xFF000099 ,Integer.MIN_VALUE,Integer.MAX_VALUE,"The color that is used for the filled part of the progress bar");
+            borderColorProgress = Integer.parseUnsignedInt(config.getString("BorderColorProgress", "colour", "0", "The color that is used for the border of the progress bar"), 16);
+            backgroundColorProgress = Integer.parseUnsignedInt(config.getString("BackgroundColorProgress", "colour", "0", "The color that is used for the background of the progress bar"), 16);
+            filledColorProgress = Integer.parseUnsignedInt(config.getString("FilledColorProgress", "colour", "FF000099", "The color that is used for the filled part of the progress bar"), 16);
+            alternateFilledColorProgress = Integer.parseUnsignedInt(config.getString("AlternateFilledColorProgress", "colour", "FF000099", "If this is different from the filledColor then the fill color will alternate"), 16);
 
-            borderColorEnergy = config.getInt("BorderColorEnergy","colour",0x00000000,Integer.MIN_VALUE,Integer.MAX_VALUE,"The color that is used for the border of the energy bar");
-            filledColorEnergy = config.getInt("FilledColorEnergy", "colour",0xFFFFE000 ,Integer.MIN_VALUE,Integer.MAX_VALUE,"The color that is used for the filled part of the energy bar");
-
+            borderColorEnergy = Integer.parseUnsignedInt(config.getString("BorderColorEnergy", "colour", "0", "The color that is used for the border of the energy bar"), 16);
+            backgroundColorEnergy = Integer.parseUnsignedInt(config.getString("BackgroundColorEnergy", "colour", "0", "The color that is used for the background of the progress bar"), 16);
+            filledColorEnergy = Integer.parseUnsignedInt(config.getString("FilledColorEnergy", "colour", "FFFFE000", "The color that is used for the filled part of the energy bar"), 16);
+            alternateFilledColorEnergy = Integer.parseUnsignedInt(config.getString("AlternateFilledColorEnergy", "colour", "FFFFE000", "If this is different from the filledColor then the fill color will alternate"), 16);
         }
 
         if (config.hasChanged()) {
