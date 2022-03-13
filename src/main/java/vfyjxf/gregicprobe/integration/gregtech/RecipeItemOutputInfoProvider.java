@@ -40,9 +40,8 @@ public class RecipeItemOutputInfoProvider extends CapabilityInfoProvider<IWorkab
                 for (ItemStack itemOutput : itemOutputs) {
                     if (itemOutput != null) {
                         horizontalPane.item(itemOutput);
-                        if (GregicProbeConfig.displayItemName) {
+                        if (GregicProbeConfig.displayItemName && itemOutputs.size() <= 2) {
                             horizontalPane.itemLabel(itemOutput);
-                            horizontalPane.text(TextStyleClass.INFO + " * " + itemOutput.getCount());
                         }
                     }
                 }
