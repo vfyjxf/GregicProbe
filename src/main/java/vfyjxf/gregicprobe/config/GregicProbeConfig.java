@@ -10,7 +10,7 @@ import vfyjxf.gregicprobe.GregicProbe;
 
 import java.io.File;
 
-@Mod.EventBusSubscriber()
+@Mod.EventBusSubscriber
 public class GregicProbeConfig {
 
     public static Configuration config;
@@ -55,7 +55,7 @@ public class GregicProbeConfig {
             alternateFilledColorProgress = Integer.parseUnsignedInt(config.getString("AlternateFilledColorProgress", "colour", "FF000099", "If this is different from the filledColor then the fill color will alternate"), 16);
 
             borderColorEnergy = Integer.parseUnsignedInt(config.getString("BorderColorEnergy", "colour", "0", "The color that is used for the border of the energy bar"), 16);
-            backgroundColorEnergy = Integer.parseUnsignedInt(config.getString("BackgroundColorEnergy", "colour", "0", "The color that is used for the background of the progress bar"), 16);
+            backgroundColorEnergy = Integer.parseUnsignedInt(config.getString("BackgroundColorEnergy", "colour", "0", "The color that is used for the background of the energy bar"), 16);
             filledColorEnergy = Integer.parseUnsignedInt(config.getString("FilledColorEnergy", "colour", "FFFFE000", "The color that is used for the filled part of the energy bar"), 16);
             alternateFilledColorEnergy = Integer.parseUnsignedInt(config.getString("AlternateFilledColorEnergy", "colour", "FFFFE000", "If this is different from the filledColor then the fill color will alternate"), 16);
         }

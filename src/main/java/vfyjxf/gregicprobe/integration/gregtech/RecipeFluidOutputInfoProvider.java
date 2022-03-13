@@ -42,7 +42,7 @@ public class RecipeFluidOutputInfoProvider extends CapabilityInfoProvider<IWorka
                         if (GregicProbeConfig.displayBukkit || !GregicProbeConfig.displayFluidName) {
                             ItemStack fluidBukkit = FluidUtil.getFilledBucket(fluidOutput);
                             horizontalPane.item(fluidBukkit);
-                            if (!GregicProbeConfig.displayFluidName) {
+                            if (!GregicProbeConfig.displayFluidName || fluidOutputs.size() > 2) {
                                 if (fluidOutput.amount >= 1000) {
                                     horizontalPane.text(TextStyleClass.INFO + " * " + (fluidOutput.amount / 1000) + "B");
                                 } else {
@@ -50,7 +50,7 @@ public class RecipeFluidOutputInfoProvider extends CapabilityInfoProvider<IWorka
                                 }
                             }
                         }
-                        if (GregicProbeConfig.displayFluidName) {
+                        if (GregicProbeConfig.displayFluidName && fluidOutputs.size() <= 2) {
                             horizontalPane.text(TextStyleClass.INFO + "{*" + fluidOutput.getUnlocalizedName() + "*}" + " * " + fluidOutput.amount + "mb ");
                         }
                     }
